@@ -112,7 +112,9 @@ func _process(delta: float):
 func _input(event):
 	"""Handle input events"""
 	if event.is_action_pressed("ui_debug"):
-		DebugBridge.dump_state()
+		var debug_bridge = GameServices.get_debug_bridge()
+		if debug_bridge:
+			debug_bridge.dump_state()
 		print("[Main] Debug state dumped - check debug_state.json")
 
 func _on_season_changed(season: String) -> void:

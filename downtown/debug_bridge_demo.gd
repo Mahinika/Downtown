@@ -31,25 +31,31 @@ func _demo_error_dump():
 func _demo_performance_dump(delay: float):
 	await get_tree().create_timer(delay).timeout
 
-	DebugBridge.dump_performance({
-		"demo": "Performance monitoring",
-		"villager_count": VillagerManager.get_villager_count() if VillagerManager else 0,
-		"building_count": BuildingManager.get_building_count() if BuildingManager else 0
-	})
+	var debug_bridge = GameServices.get_debug_bridge()
+	if debug_bridge:
+		debug_bridge.dump_performance({
+			"demo": "Performance monitoring",
+			"villager_count": VillagerManager.get_villager_count() if VillagerManager else 0,
+			"building_count": BuildingManager.get_building_count() if BuildingManager else 0
+		})
 	print("[DebugBridgeDemo] Performance dump created")
 
 func _demo_ai_dump(delay: float):
 	await get_tree().create_timer(delay).timeout
 
 	# If you have AI nodes, you can dump their state like this:
-	# DebugBridge.dump_ai_state(ai_node, {"context": "AI behavior check"})
+	# var debug_bridge = GameServices.get_debug_bridge()
+	# if debug_bridge:
+	#     debug_bridge.dump_ai_state(ai_node, {"context": "AI behavior check"})
 
-	DebugBridge.dump_state({
-		"demo": "AI State Dump",
-		"job_assignments": JobSystem.job_assignments.size() if JobSystem else 0,
-		"active_tasks": JobSystem.work_tasks.size() if JobSystem else 0,
-		"note": "Add DebugBridge.dump_ai_state(your_ai_node) to your AI scripts"
-	})
+	var debug_bridge = GameServices.get_debug_bridge()
+	if debug_bridge:
+		debug_bridge.dump_state({
+			"demo": "AI State Dump",
+			"job_assignments": JobSystem.job_assignments.size() if JobSystem else 0,
+			"active_tasks": JobSystem.work_tasks.size() if JobSystem else 0,
+			"note": "Add DebugBridge.dump_ai_state(your_ai_node) to your AI scripts"
+		})
 	print("[DebugBridgeDemo] AI dump created")
 
 # Example of how to add debug dumping to your AI scripts:

@@ -1,8 +1,11 @@
-res://debug_helper.gd
-res://tests/ComprehensiveTestSuite.gd
-res://tests/TestDataBuilder.gd
-res://scripts/UIManager.gd
+res://debug_bridge_demo.gd
 res://scenes/main.gd
+res://scripts/DebugBridge.gd
+res://scripts/EconomySystem.gd
 res://scripts/GameServices.gd
+res://scripts/GameWorld.gd
 res://scripts/JobSystem.gd
-res://scripts/UIBuilder.gd
+res://scripts/PersistenceSystem.gd
+res://scripts/ProgressionSystem.gd
+res://scripts/UIManager.gd
+res://scripts/WorldSimulation.gd

@@ -1,24 +1,7 @@
+class_name GameWorldClass
 extends Node
 
 ## GameWorld - Unified world management system
-##
-## Consolidates CityManager, BuildingManager, and VillagerManager functionality
-## into a single, cohesive world management system.
-##
-## Key Features:
-## - Grid-based world layout and pathfinding
-## - Building placement, tracking, and effects
-## - Villager spawning, management, and job assignment
-## - Unified world state management
-##
-## Usage:
-##   var world = GameWorld.new()
-##   world.initialize_grid(100, 100)
-##   var building_id = world.place_building("hut", grid_pos)
-
-# class_name GameWorld  # Removed to avoid autoload conflict
-
-# Emitted when a building is successfully placed
 signal building_placed(building_id: String, position: Vector2i)
 
 # Emitted when a building is removed

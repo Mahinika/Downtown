@@ -1,3 +1,4 @@
+class_name ProgressionSystemClass
 extends Node
 
 ## ProgressionSystem - Unified progression management system
@@ -16,8 +17,6 @@ extends Node
 ##   var progression = ProgressionSystem.new()
 ##   progression.start_research("advanced_tools")
 ##   var unlocked = progression.is_building_unlocked("advanced_workshop")
-
-# class_name ProgressionSystem  # Removed to avoid autoload conflict
 
 # Emitted when a goal is completed
 signal goal_completed(goal_id: String)
@@ -39,6 +38,12 @@ var completed_goals: Array[String] = []
 
 # Unlocked buildings
 var unlocked_buildings: Array[String] = []
+
+# Favorite buildings (requested by UI/Save system)
+var favorite_buildings: Array[String] = []
+
+# Achievements (requested by UI/Save system)
+var achievements: Dictionary = {}
 
 # Research data: research_id -> research_data
 var research_projects: Dictionary = {}
@@ -335,3 +340,11 @@ func get_completed_goals() -> Array:
 func get_unlocked_buildings() -> Array:
 	"""Get list of unlocked buildings"""
 	return unlocked_buildings.duplicate()
+func is_building_favorite(building_id: String) -> bool:
+        return building_id in favorite_buildings
+
+func toggle_favorite_building(building_id: String) -> void:
+        if building_id in favorite_buildings:
+                favorite_buildings.erase(building_id)
+        else:
+                favorite_buildings.append(building_id)

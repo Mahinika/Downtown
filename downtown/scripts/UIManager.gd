@@ -1,26 +1,8 @@
+class_name UIManagerClass
 extends Node
 
 ## UIManager - Unified UI management system
 
-const GameServicesClass = preload("res://scripts/GameServices.gd")
-##
-## Consolidates UIBuilder and UITheme functionality
-## into a single, cohesive UI management system.
-##
-## Key Features:
-## - UI component creation and theming
-## - Panel management and transitions
-## - Resource display and building cards
-## - Toast notifications and feedback
-##
-## Usage:
-##   var ui = UIManager.new()
-##   var panel = ui.create_research_panel()
-##   ui.show_toast("Building completed!", "success")
-
-# class_name UIManager  # Removed to avoid autoload conflict
-
-# UI theme colors and constants
 const THEME_COLORS = {
 	"primary": Color(0.2, 0.4, 0.8),
 	"secondary": Color(0.4, 0.6, 1.0),

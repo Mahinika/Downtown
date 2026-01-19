@@ -1,24 +1,7 @@
+class_name EconomySystemClass
 extends Node
 
 ## EconomySystem - Unified economic management system
-##
-## Consolidates ResourceManager, JobSystem, and economic building functionality
-## into a single, cohesive economic management system.
-##
-## Key Features:
-## - Resource tracking and transactions
-## - Production and consumption systems
-## - Job assignment and worker management
-## - Economic building effects
-##
-## Usage:
-##   var economy = EconomySystem.new()
-##   economy.add_resource("wood", 50)
-##   economy.assign_worker("villager_1", "lumber_hut_1")
-
-# class_name EconomySystem  # Removed to avoid autoload conflict
-
-# Emitted when a resource amount changes
 signal resource_changed(resource_id: String, amount: float, new_total: float)
 
 # Emitted when a villager is assigned to a job

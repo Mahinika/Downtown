@@ -35,8 +35,6 @@ func handle_command(command_type, params):
 			return handle_set_collision_shape(params)
 		"SET_OBJECT_TRANSFORM":
 			return handle_set_object_transform(params)
-		"CREATE_CHILD_OBJECT":  
-			return handle_create_child_object(params)
 		"GET_ASSET_LIST":
 			return handle_get_asset_list(params)
 		"VIEW_SCRIPT":

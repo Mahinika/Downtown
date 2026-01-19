@@ -1,5 +1,5 @@
+class_name DebugBridgeClass
 extends Node
-class_name DebugBridge
 
 var last_dump_path := "res://debug_state.json"
 
@@ -71,7 +71,7 @@ func dump_performance(extra := {}):
 	var perf_data = extra.duplicate()
 	perf_data["memory"] = Performance.get_monitor(Performance.MEMORY_STATIC)
 	perf_data["objects"] = Performance.get_monitor(Performance.OBJECT_COUNT)
-	perf_data["render_objects"] = Performance.get_monitor(Performance.RENDER_OBJECTS_IN_FRAME)
+	perf_data["render_objects"] = Performance.get_monitor(Performance.RENDER_TOTAL_OBJECTS_IN_FRAME)
 	dump_state(perf_data)
 
 # AI-specific state dumping - customize this for your AI logic

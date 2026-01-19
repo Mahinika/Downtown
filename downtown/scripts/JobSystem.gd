@@ -82,12 +82,14 @@ func assign_villager_to_building(villager_id: String, building_id: String, job_t
 	var villager = world.get_villager(villager_id)
 	if not villager or not is_instance_valid(villager):
 		push_warning("[JobSystem] Invalid villager: ", villager_id)
-		DebugBridge.dump_error("Invalid villager in job assignment", {
-			"villager_id": villager_id,
-			"building_id": building_id,
-			"job_type": job_type,
-			"world_villager_count": world.get_villager_count() if world else 0
-		})
+		var debug_bridge = GameServices.get_debug_bridge()
+		if debug_bridge:
+			debug_bridge.dump_error("Invalid villager in job assignment", {
+				"villager_id": villager_id,
+				"building_id": building_id,
+				"job_type": job_type,
+				"world_villager_count": world.get_villager_count() if world else 0
+			})
 		return false
 	
 	# Check if villager already has a job
@@ -106,8 +108,10 @@ func assign_villager_to_building(villager_id: String, building_id: String, job_t
 	
 	if current_workers >= max_workers:
 		push_warning("[JobSystem] Building ", building_id, " is at capacity (", current_workers, "/", max_workers, ")")
-		DebugBridge.dump_error("Building at capacity", {
-			"building_id": building_id,
+		var debug_bridge = GameServices.get_debug_bridge()
+		if debug_bridge:
+			debug_bridge.dump_error("Building at capacity", {
+				"building_id": building_id,
 			"current_workers": current_workers,
 			"max_workers": max_workers,
 			"building_type": building.get("type", "unknown") if building else "null"

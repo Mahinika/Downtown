@@ -1,24 +1,7 @@
+class_name PersistenceSystemClass
 extends Node
 
 ## PersistenceSystem - Unified persistence management system
-##
-## Consolidates SaveManager and DataManager functionality
-## into a single, cohesive persistence management system.
-##
-## Key Features:
-## - Game state serialization and deserialization
-## - Data loading and caching
-## - Save file management
-## - Cross-session persistence
-##
-## Usage:
-##   var persistence = PersistenceSystem.new()
-##   persistence.save_game("manual_save")
-##   persistence.load_game("manual_save")
-
-# class_name PersistenceSystem  # Removed to avoid autoload conflict
-
-# Emitted when a game is successfully saved
 signal game_saved(save_name: String)
 
 # Emitted when a game is successfully loaded

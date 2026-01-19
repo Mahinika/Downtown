@@ -1,3 +1,4 @@
+class_name GameServicesClass
 extends Node
 
 ## GameServices - Service Locator Pattern
@@ -11,15 +12,16 @@ extends Node
 ##   var ui = GameServices.ui
 
 # Service references
-var world: GameWorld = null
-var economy: EconomySystem = null
-var progression: ProgressionSystem = null
-var simulation: WorldSimulation = null
-var persistence: PersistenceSystem = null
-var ui: UIManager = null
+var world: GameWorldClass = null
+var economy: EconomySystemClass = null
+var progression: ProgressionSystemClass = null
+var simulation: WorldSimulationClass = null
+var persistence: PersistenceSystemClass = null
+var ui: UIManagerClass = null
+var debug_bridge: DebugBridgeClass = null
 
 # Singleton instance
-static var _instance: GameServices = null
+static var _instance: GameServicesClass = null
 
 func _init() -> void:
 	_instance = self
@@ -96,32 +98,42 @@ func initialize_services() -> void:
 	else:
 		ui = UIManager.new()
 		add_child(ui)
+		
+	if DebugBridge:
+		debug_bridge = DebugBridge
+		print("[GameServices] Using existing DebugBridge autoload")
+	else:
+		debug_bridge = DebugBridgeClass.new()
+		add_child(debug_bridge)
 
 	print("[GameServices] All services initialized")
 
 # Static accessors for convenience
-static func get_world() -> GameWorld:
+static func get_world() -> GameWorldClass:
 	return _instance.world if _instance else null
 
-static func get_economy() -> EconomySystem:
+static func get_economy() -> EconomySystemClass:
 	return _instance.economy if _instance else null
 
-static func get_progression() -> ProgressionSystem:
+static func get_progression() -> ProgressionSystemClass:
 	return _instance.progression if _instance else null
 
-static func get_simulation() -> WorldSimulation:
+static func get_simulation() -> WorldSimulationClass:
 	return _instance.simulation if _instance else null
 
-static func get_persistence() -> PersistenceSystem:
+static func get_persistence() -> PersistenceSystemClass:
 	return _instance.persistence if _instance else null
 
-static func get_ui() -> UIManager:
+static func get_ui() -> UIManagerClass:
 	return _instance.ui if _instance else null
+
+static func get_debug_bridge() -> DebugBridgeClass:
+	return _instance.debug_bridge if _instance else null
 
 # Service validation
 func validate_services() -> bool:
 	"""Validate that all required services are available"""
-	var services = [world, economy, progression, simulation, persistence, ui]
+	var services = [world, economy, progression, simulation, persistence, ui, debug_bridge]
 	for service in services:
 		if not service:
 			push_error("[GameServices] Service not initialized: ", service)

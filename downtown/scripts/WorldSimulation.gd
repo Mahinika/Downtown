@@ -1,24 +1,7 @@
+class_name WorldSimulationClass
 extends Node
 
 ## WorldSimulation - Unified world simulation system
-##
-## Consolidates SeasonalManager, EventManager, and PopularityManager functionality
-## into a single, cohesive world simulation system.
-##
-## Key Features:
-## - Time progression and seasonal changes
-## - Random events and their effects
-## - Population growth and happiness simulation
-## - Weather and environmental effects
-##
-## Usage:
-##   var simulation = WorldSimulation.new()
-##   simulation.start_season_cycle()
-##   var happiness = simulation.calculate_population_happiness()
-
-# class_name WorldSimulation  # Removed to avoid autoload conflict
-
-# Emitted when season changes
 signal season_changed(new_season: String, old_season: String)
 
 # Emitted when weather changes
