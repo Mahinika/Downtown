@@ -1,0 +1,69 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Downtown"
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.5", "Mobile")
+config/icon="res://icon.svg"
+
+[autoload]
+
+DataManager="*res://scripts/DataManager.gd"
+CityManager="*res://scripts/CityManager.gd"
+PerformanceMonitor="*res://scripts/PerformanceMonitor.gd"
+PerformanceRegressionTest="*res://scripts/PerformanceRegressionTest.gd"
+ResourceManager="*res://scripts/ResourceManager.gd"
+ResourceNodeManager="*res://scripts/ResourceNodeManager.gd"
+BuildingManager="*res://scripts/BuildingManager.gd"
+VillagerManager="*res://scripts/VillagerManager.gd"
+SkillManager="*res://scripts/SkillManager.gd"
+JobSystem="*res://scripts/JobSystem.gd"
+SeasonalManager="*res://scripts/SeasonalManager.gd"
+SaveManager="*res://scripts/SaveManager.gd"
+ResearchManager="*res://scripts/ResearchManager.gd"
+EventManager="*res://scripts/EventManager.gd"
+AssetGenerator="*res://scripts/AssetGenerator.gd"
+UITheme="*res://scripts/UITheme.gd"
+UIBuilder="*res://scripts/UIBuilder.gd"
+PopularityManager="*res://scripts/PopularityManager.gd"
+GameServices="*res://scripts/GameServices.gd"
+GameWorld="*res://scripts/GameWorld.gd"
+EconomySystem="*res://scripts/EconomySystem.gd"
+ProgressionSystem="*res://scripts/ProgressionSystem.gd"
+WorldSimulation="*res://scripts/WorldSimulation.gd"
+PersistenceSystem="*res://scripts/PersistenceSystem.gd"
+UIManager="*res://scripts/UIManager.gd"
+DebugBridge="*res://scripts/DebugBridge.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=2
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[input]
+
+ui_debug={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":120,"key_label":0,"unicode":120,"echo":false,"script":null)
+]
+}
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_mcp/plugin.cfg")
+
+[rendering]
+
+renderer/rendering_method="mobile"

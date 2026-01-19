@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ucjkmtws8soo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6adnx"]
+
+[node name="test_scene" type="Node"]
+
+[node name="TestCube" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 2)
+mesh = SubResource("BoxMesh_6adnx")

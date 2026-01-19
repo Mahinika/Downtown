@@ -1,0 +1,21 @@
+﻿{
+    "mcpServers": {
+        "think-tank": {
+            "command": "node",
+            "args": [
+                "C:\\Users\\Ropbe\\Desktop\\Downtown\\mcp-think-tank-wrapper.cjs"
+            ],
+            "env": {
+                "MEMORY_PATH": "C:/Users/Ropbe/Desktop/Downtown/memory/think-tank/think-tank-memory.jsonl",
+                "TOOL_LIMIT": "25",
+                "CACHE_TOOL_CALLS": "true",
+                "CACHE_CONTENT": "true",
+                "CONTENT_CACHE_SIZE": "50",
+                "CONTENT_CACHE_TTL": "300000",
+                "MCP_DEBUG": "false",
+                "AUTO_LINK": "true",
+                "LOG_LEVEL": "info"
+            }
+        }
+    }
+}

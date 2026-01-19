@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0vjhvantyf3d"]
+
+[ext_resource type="Script" uid="uid://vei8w3ty2hcw" path="res://scenes/main.gd" id="1_hkpp5"]
+
+[node name="MainRoot" type="Node2D"]
+script = ExtResource("1_hkpp5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1600, 1600)
+
+[node name="TestNode1" type="Label" parent="."]
+text = "Hello World"
+
+[node name="TestNode2" type="Button" parent="."]

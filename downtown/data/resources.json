@@ -1,0 +1,108 @@
+{
+  "resources": {
+    "food": {
+      "id": "food",
+      "name": "Food",
+      "icon": "res://assets/icons/food_icon.png",
+      "starting_amount": 100,
+      "max_storage": 200,
+      "description": "Essential sustenance for your population"
+    },
+    "wood": {
+      "id": "wood",
+      "name": "Wood",
+      "icon": "res://assets/icons/wood_icon.png",
+      "starting_amount": 50,
+      "max_storage": 200,
+      "description": "Building material for construction"
+    },
+    "stone": {
+      "id": "stone",
+      "name": "Stone",
+      "icon": "res://assets/icons/stone_icon.png",
+      "starting_amount": 50,
+      "max_storage": 200,
+      "description": "Hard material for construction"
+    },
+    "population": {
+      "id": "population",
+      "name": "Population",
+      "icon": "res://assets/icons/population_icon.png",
+      "starting_amount": 3,
+      "max_storage": 100,
+      "description": "Number of people in your settlement"
+    },
+    "gold": {
+      "id": "gold",
+      "name": "Gold",
+      "icon": "res://assets/icons/gold_icon.png",
+      "starting_amount": 0,
+      "max_storage": 500,
+      "description": "Currency earned through trade and commerce"
+    },
+    "wheat": {
+      "id": "wheat",
+      "name": "Wheat",
+      "icon": "res://assets/icons/wheat_icon.png",
+      "starting_amount": 0,
+      "max_storage": 100,
+      "description": "Grain crop used for food processing and brewing"
+    },
+    "flour": {
+      "id": "flour",
+      "name": "Flour",
+      "icon": "res://assets/icons/flour_icon.png",
+      "starting_amount": 0,
+      "max_storage": 100,
+      "description": "Processed wheat used for advanced baking and cooking"
+    },
+    "preserved_food": {
+      "id": "preserved_food",
+      "name": "Preserved Food",
+      "icon": "res://assets/icons/preserved_food_icon.png",
+      "starting_amount": 0,
+      "max_storage": 150,
+      "description": "Smoked and preserved food with extended shelf life"
+    },
+    "beer": {
+      "id": "beer",
+      "name": "Beer",
+      "icon": "res://assets/icons/beer_icon.png",
+      "starting_amount": 0,
+      "max_storage": 50,
+      "description": "Fermented beverage that boosts villager happiness"
+    },
+    "tools": {
+      "id": "tools",
+      "name": "Tools",
+      "icon": "res://assets/icons/tools_icon.png",
+      "starting_amount": 0,
+      "max_storage": 50,
+      "description": "Forged tools that improve construction efficiency"
+    },
+    "hops": {
+      "id": "hops",
+      "name": "Hops",
+      "icon": "res://assets/icons/hops_icon.png",
+      "starting_amount": 0,
+      "max_storage": 100,
+      "description": "Crop used for brewing ale and beer"
+    },
+    "bread": {
+      "id": "bread",
+      "name": "Bread",
+      "icon": "res://assets/icons/bread_icon.png",
+      "starting_amount": 0,
+      "max_storage": 100,
+      "description": "Baked bread from flour, provides food variety bonus"
+    },
+    "meat": {
+      "id": "meat",
+      "name": "Meat",
+      "icon": "res://assets/icons/meat_icon.png",
+      "starting_amount": 0,
+      "max_storage": 100,
+      "description": "Meat from hunting or animals, provides food variety"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+res://debug_helper.gd
+res://tests/ComprehensiveTestSuite.gd
+res://tests/TestDataBuilder.gd
+res://scripts/UIManager.gd
+res://scenes/main.gd
+res://scripts/GameServices.gd
+res://scripts/JobSystem.gd
+res://scripts/UIBuilder.gd

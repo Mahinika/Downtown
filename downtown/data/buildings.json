@@ -1,0 +1,707 @@
+{
+  "buildings": {
+    "hut": {
+      "id": "hut",
+      "name": "Hut",
+      "category": "residential",
+      "cost": {
+        "wood": 20,
+        "stone": 10
+      },
+      "size": [1, 1],
+      "housing_capacity": 8,
+      "max_villager_level": 5,
+      "effects": {
+        "gathers": {
+          "population": 2
+        },
+        "consumes": {
+          "food": 1
+        }
+      },
+      "production_rate": {
+        "population": 2.0
+      },
+      "consumption_rate": {
+        "food": 1.0
+      },
+      "gathering_rate": 60,
+      "icon": "res://assets/buildings/hut.png",
+      "description": "Simple dwelling that houses people and grows population. Supports up to 8 residents.",
+      "upgrades": {
+        "level_2": {
+          "name": "Improved Hut",
+          "cost": {
+            "wood": 15,
+            "stone": 25
+          },
+          "time": 300,
+          "max_villager_level": 10,
+          "happiness_bonus": 10,
+          "description": "Upgraded dwelling with better materials and comfort."
+        },
+        "level_3": {
+          "name": "Quality Hut",
+          "cost": {
+            "wood": 25,
+            "stone": 40
+          },
+          "time": 600,
+          "max_villager_level": 15,
+          "happiness_bonus": 20,
+          "housing_capacity": 10,
+          "description": "Well-built dwelling providing comfort and security. Supports up to 10 residents."
+        },
+        "level_4": {
+          "name": "Expanded Hut",
+          "cost": {
+            "wood": 35,
+            "stone": 55
+          },
+          "time": 900,
+          "max_villager_level": 20,
+          "happiness_bonus": 25,
+          "housing_capacity": 12,
+          "description": "Significantly expanded hut with additional rooms. Supports up to 12 residents."
+        }
+      }
+    },
+    "fire_pit": {
+      "id": "fire_pit",
+      "name": "Fire Pit",
+      "category": "production",
+      "cost": {
+        "wood": 10,
+        "stone": 5
+      },
+      "size": [1, 1],
+      "worker_capacity": 1,
+      "effects": {
+        "gathers": {
+          "food": 3
+        }
+      },
+      "production_rate": {
+        "food": 3.0
+      },
+      "production_per_worker": 3.0,
+      "efficiency": 1.0,
+      "gathering_rate": 60,
+      "icon": "res://assets/buildings/fire_pit.png",
+      "description": "Cooking fire that gathers and prepares food for your settlement. Requires 1 worker."
+    },
+    "storage_pit": {
+      "id": "storage_pit",
+      "name": "Storage Pit",
+      "category": "storage",
+      "cost": {
+        "wood": 15,
+        "stone": 15
+      },
+      "size": [1, 1],
+      "storage_capacity": 100,
+      "effects": {
+        "storage_bonus": 50
+      },
+      "icon": "res://assets/buildings/storage_pit.png",
+      "description": "Increases storage capacity for all resources by 50. Can store up to 100 units of any resource."
+    },
+    "tool_workshop": {
+      "id": "tool_workshop",
+      "name": "Tool Workshop",
+      "category": "production",
+      "cost": {
+        "wood": 30,
+        "stone": 20
+      },
+      "size": [1, 1],
+      "worker_capacity": 1,
+      "effects": {
+        "gathers": {
+          "wood": 1
+        }
+      },
+      "production_rate": {
+        "wood": 1.0
+      },
+      "production_per_worker": 1.0,
+      "efficiency": 1.0,
+      "gathering_rate": 60,
+      "icon": "res://assets/buildings/tool_workshop.png",
+      "description": "Crafts tools and gathers wood. Requires 1 worker."
+    },
+    "lumber_hut": {
+      "id": "lumber_hut",
+      "name": "Lumber Hut",
+      "category": "production",
+      "cost": {
+        "wood": 25,
+        "stone": 15
+      },
+      "size": [1, 1],
+      "worker_capacity": 1,
+      "effects": {
+        "workplace": "lumberjack"
+      },
+      "efficiency": 1.0,
+      "icon": "res://assets/buildings/lumber_hut.png",
+      "description": "Workplace for lumberjacks. Villagers assigned here will cut trees and deliver wood to stockpiles. Supports 1 worker."
+    },
+    "stockpile": {
+      "id": "stockpile",
+      "name": "Stockpile",
+      "category": "storage",
+      "cost": {
+        "wood": 20,
+        "stone": 10
+      },
+      "size": [1, 1],
+      "storage_capacity": 200,
+      "effects": {
+        "storage_bonus": 100,
+        "resource_depot": true
+      },
+      "icon": "res://assets/buildings/stockpile.png",
+      "description": "Drop-off point for gathered resources. Increases storage capacity by 100 and accepts resource deliveries from villagers. Can store up to 200 units of any resource."
+    },
+    "stone_quarry": {
+      "id": "stone_quarry",
+      "name": "Stone Quarry",
+      "category": "production",
+      "cost": {
+        "wood": 30,
+        "stone": 20
+      },
+      "size": [1, 1],
+      "worker_capacity": 1,
+      "effects": {
+        "workplace": "miner"
+      },
+      "efficiency": 1.0,
+      "icon": "res://assets/buildings/stone_quarry.png",
+      "description": "Workplace for miners. Villagers assigned here will mine stone and deliver it to stockpiles. Supports 1 worker."
+    },
+    "farm": {
+      "id": "farm",
+      "name": "Farm",
+      "category": "production",
+      "cost": {
+        "wood": 25,
+        "stone": 15
+      },
+      "size": [2, 2],
+      "worker_capacity": 2,
+      "effects": {
+        "workplace": "farmer"
+      },
+      "production_rate": {
+        "food": 2.0
+      },
+      "production_per_worker": 2.0,
+      "efficiency": 1.0,
+      "icon": "res://assets/buildings/farm.png",
+      "description": "Workplace for farmers. Villagers assigned here will tend crops and produce food. Supports 2 workers."
+    },
+    "market": {
+      "id": "market",
+      "name": "Market",
+      "category": "commercial",
+      "cost": {
+        "wood": 30,
+        "stone": 25
+      },
+      "size": [2, 2],
+      "effects": {
+        "generates": {
+          "gold": 5
+        },
+        "trade_bonus": 1.2
+      },
+      "generation_rate": 60,
+      "icon": "res://assets/buildings/market.png",
+      "description": "Commercial hub where villagers trade resources for gold. Generates income and improves trade efficiency by 20%."
+    },
+    "well": {
+      "id": "well",
+      "name": "Well",
+      "category": "public",
+      "cost": {
+        "wood": 15,
+        "stone": 20
+      },
+      "size": [1, 1],
+      "effects": {
+        "happiness_bonus": 10,
+        "health_bonus": 5
+      },
+      "icon": "res://assets/buildings/well.png",
+      "description": "Provides clean water access, boosting villager happiness by 10 and health by 5 within its area of influence."
+    },
+    "house": {
+      "id": "house",
+      "name": "House",
+      "category": "residential",
+      "cost": {
+        "wood": 40,
+        "stone": 30
+      },
+      "size": [1, 1],
+      "housing_capacity": 12,
+      "max_villager_level": 20,
+      "effects": {
+        "gathers": {
+          "population": 3
+        },
+        "consumes": {
+          "food": 1.5
+        },
+        "happiness_bonus": 15
+      },
+      "production_rate": {
+        "population": 3.0
+      },
+      "consumption_rate": {
+        "food": 1.5
+      },
+      "gathering_rate": 60,
+      "icon": "res://assets/buildings/house.png",
+      "description": "Comfortable family home that houses people and significantly boosts happiness. Supports up to 12 residents.",
+      "upgrades": {
+        "level_2": {
+          "name": "Spacious House",
+          "cost": {
+            "wood": 30,
+            "stone": 50
+          },
+          "time": 900,
+          "max_villager_level": 25,
+          "happiness_bonus": 30,
+          "description": "Larger home with additional rooms and amenities."
+        },
+        "level_3": {
+          "name": "Luxury House",
+          "cost": {
+            "wood": 50,
+            "stone": 80
+          },
+          "time": 1800,
+          "max_villager_level": 30,
+          "happiness_bonus": 45,
+          "housing_capacity": 15,
+          "description": "High-quality dwelling with premium materials and features. Supports up to 15 residents."
+        },
+        "level_4": {
+          "name": "Estate House",
+          "cost": {
+            "wood": 80,
+            "stone": 120
+          },
+          "time": 2700,
+          "max_villager_level": 35,
+          "happiness_bonus": 55,
+          "housing_capacity": 18,
+          "description": "Grand estate house with extensive grounds and luxury amenities. Supports up to 18 residents."
+        }
+      }
+    },
+    "apartment": {
+      "id": "apartment",
+      "name": "Apartment",
+      "category": "residential",
+      "cost": {
+        "wood": 80,
+        "stone": 60
+      },
+      "size": [2, 2],
+      "housing_capacity": 20,
+      "max_villager_level": 25,
+      "effects": {
+        "gathers": {
+          "population": 4
+        },
+        "consumes": {
+          "food": 2.5
+        },
+        "happiness_bonus": 10
+      },
+      "production_rate": {
+        "population": 4.0
+      },
+      "consumption_rate": {
+        "food": 2.5
+      },
+      "gathering_rate": 60,
+      "icon": "res://assets/buildings/apartment.png",
+      "description": "Multi-family apartment building that houses many residents efficiently. Supports up to 20 residents with moderate happiness bonus."
+    },
+    "tenement": {
+      "id": "tenement",
+      "name": "Tenement",
+      "category": "residential",
+      "cost": {
+        "wood": 120,
+        "stone": 100
+      },
+      "size": [2, 3],
+      "housing_capacity": 35,
+      "max_villager_level": 30,
+      "effects": {
+        "gathers": {
+          "population": 5
+        },
+        "consumes": {
+          "food": 3.5
+        },
+        "happiness_bonus": 5
+      },
+      "production_rate": {
+        "population": 5.0
+      },
+      "consumption_rate": {
+        "food": 3.5
+      },
+      "gathering_rate": 60,
+      "icon": "res://assets/buildings/tenement.png",
+      "description": "Large tenement building that maximizes housing density. Supports up to 35 residents but with lower happiness bonus due to crowded conditions."
+    },
+    "manor": {
+      "id": "manor",
+      "name": "Manor",
+      "category": "residential",
+      "cost": {
+        "wood": 100,
+        "stone": 80
+      },
+      "size": [2, 2],
+      "housing_capacity": 15,
+      "max_villager_level": 35,
+      "effects": {
+        "gathers": {
+          "population": 3
+        },
+        "consumes": {
+          "food": 2.0
+        },
+        "happiness_bonus": 25,
+        "popularity_bonus": 5
+      },
+      "production_rate": {
+        "population": 3.0
+      },
+      "consumption_rate": {
+        "food": 2.0
+      },
+      "gathering_rate": 60,
+      "icon": "res://assets/buildings/manor.png",
+      "description": "Luxurious manor house for wealthy residents. Supports up to 15 residents with excellent happiness and popularity bonuses."
+    },
+    "shrine": {
+      "id": "shrine",
+      "name": "Shrine",
+      "category": "public",
+      "cost": {
+        "wood": 25,
+        "stone": 30
+      },
+      "size": [1, 1],
+      "effects": {
+        "research_bonus": 1.25,
+        "morale_bonus": 15
+      },
+      "icon": "res://assets/buildings/shrine.png",
+      "description": "Sacred place that boosts research efficiency by 25% and increases villager morale by 15."
+    },
+    "advanced_workshop": {
+      "id": "advanced_workshop",
+      "name": "Advanced Workshop",
+      "category": "industrial",
+      "cost": {
+        "wood": 40,
+        "stone": 35
+      },
+      "size": [2, 2],
+      "worker_capacity": 2,
+      "effects": {
+        "workplace": "engineer",
+        "technology_bonus": 1.3
+      },
+      "efficiency": 1.0,
+      "icon": "res://assets/buildings/advanced_workshop.png",
+      "description": "Advanced industrial facility for creating sophisticated tools and technology. Supports 2 engineers and boosts technological progress by 30%."
+    },
+    "mill": {
+      "id": "mill",
+      "name": "Mill",
+      "category": "industrial",
+      "cost": {
+        "wood": 25,
+        "stone": 30
+      },
+      "size": [2, 2],
+      "worker_capacity": 1,
+      "effects": {
+        "workplace": "miller",
+        "processes": {
+          "wheat": {
+            "output": "flour",
+            "rate": 2.0,
+            "input_rate": 1.0
+          }
+        }
+      },
+      "efficiency": 1.0,
+      "icon": "res://assets/buildings/mill.png",
+      "description": "Processes wheat into flour for advanced food production. Requires 1 miller and consumes wheat to produce flour."
+    },
+    "smokehouse": {
+      "id": "smokehouse",
+      "name": "Smokehouse",
+      "category": "industrial",
+      "cost": {
+        "wood": 30,
+        "stone": 20
+      },
+      "size": [1, 1],
+      "worker_capacity": 1,
+      "effects": {
+        "workplace": "smoker",
+        "processes": {
+          "food": {
+            "output": "preserved_food",
+            "rate": 1.5,
+            "input_rate": 1.0,
+            "preservation_bonus": 2.0
+          }
+        }
+      },
+      "efficiency": 1.0,
+      "icon": "res://assets/buildings/smokehouse.png",
+      "description": "Preserves food for longer storage and better nutritional value. Converts regular food into preserved food with extended shelf life."
+    },
+    "brewery": {
+      "id": "brewery",
+      "name": "Brewery",
+      "category": "industrial",
+      "cost": {
+        "wood": 35,
+        "stone": 25
+      },
+      "size": [2, 2],
+      "worker_capacity": 1,
+      "effects": {
+        "workplace": "brewer",
+        "processes": {
+          "hops": {
+            "output": "beer",
+            "rate": 1.0,
+            "input_rate": 1.0
+          },
+          "wheat": {
+            "output": "beer",
+            "rate": 0.5,
+            "input_rate": 2.0
+          }
+        },
+        "happiness_bonus": 20
+      },
+      "efficiency": 1.0,
+      "icon": "res://assets/buildings/brewery.png",
+      "description": "Brews beer from hops (preferred) or wheat. Hops provide 1:1 conversion, wheat provides 0.5:1 conversion. Requires 1 brewer and produces beer that increases villager morale."
+    },
+    "blacksmith": {
+      "id": "blacksmith",
+      "name": "Blacksmith",
+      "category": "industrial",
+      "cost": {
+        "wood": 40,
+        "stone": 35
+      },
+      "size": [2, 2],
+      "worker_capacity": 1,
+      "effects": {
+        "workplace": "blacksmith",
+        "processes": {
+          "stone": {
+            "output": "tools",
+            "rate": 0.5,
+            "input_rate": 3.0
+          }
+        },
+        "construction_bonus": 1.25
+      },
+      "efficiency": 1.0,
+      "icon": "res://assets/buildings/blacksmith.png",
+      "description": "Forges tools from stone, improving construction efficiency. Produces tools that boost building speed and quality."
+    },
+    "apple_orchard": {
+      "id": "apple_orchard",
+      "name": "Apple Orchard",
+      "category": "production",
+      "cost": {
+        "wood": 20,
+        "stone": 10
+      },
+      "size": [2, 2],
+      "worker_capacity": 1,
+      "effects": {
+        "gathers": {
+          "food": 2
+        },
+        "food_type": "apples",
+        "production_rate": {
+          "food": 2.0
+        }
+      },
+      "production_per_worker": 2.0,
+      "efficiency": 1.0,
+      "gathering_rate": 60,
+      "icon": "res://assets/buildings/apple_orchard.png",
+      "description": "Fast-growing orchard that produces apples for food. Provides quick food source early in the game. Requires 1 worker."
+    },
+    "hops_farm": {
+      "id": "hops_farm",
+      "name": "Hops Farm",
+      "category": "production",
+      "cost": {
+        "wood": 25,
+        "stone": 15
+      },
+      "size": [2, 2],
+      "worker_capacity": 1,
+      "effects": {
+        "gathers": {
+          "hops": 3
+        },
+        "production_rate": {
+          "hops": 3.0
+        }
+      },
+      "production_per_worker": 3.0,
+      "efficiency": 1.0,
+      "gathering_rate": 60,
+      "icon": "res://assets/buildings/hops_farm.png",
+      "description": "Farm that grows hops for brewing ale. Produces hops resource used in breweries. Requires 1 worker."
+    },
+    "bakery": {
+      "id": "bakery",
+      "name": "Bakery",
+      "category": "industrial",
+      "requires": ["mill"],
+      "cost": {
+        "wood": 30,
+        "stone": 20
+      },
+      "size": [1, 1],
+      "worker_capacity": 1,
+      "effects": {
+        "workplace": "baker",
+        "processes": {
+          "flour": {
+            "output": "bread",
+            "rate": 1.0,
+            "input_rate": 1.0
+          }
+        },
+        "food_type": "bread"
+      },
+      "efficiency": 1.0,
+      "icon": "res://assets/buildings/bakery.png",
+      "description": "Bakes bread from flour, providing advanced food variety. Requires a mill to be built first. Produces bread which provides food variety bonus for popularity."
+    },
+    "inn": {
+      "id": "inn",
+      "name": "Inn",
+      "category": "public",
+      "cost": {
+        "wood": 40,
+        "stone": 30
+      },
+      "size": [2, 2],
+      "effects": {
+        "ale_coverage": 30,
+        "happiness_bonus": 4,
+        "consumes": {
+          "beer": 1
+        }
+      },
+      "consumption_rate": {
+        "beer": 1.0
+      },
+      "generation_rate": 60,
+      "icon": "res://assets/buildings/inn.png",
+      "description": "Serves ale to peasants, providing happiness bonus. Each inn covers up to 30 peasants within its area. Consumes beer to provide ale coverage, offsetting tax penalties."
+    },
+    "gallows": {
+      "id": "gallows",
+      "name": "Gallows",
+      "category": "fear",
+      "fear_level": 1,
+      "cost": {
+        "wood": 15,
+        "stone": 10
+      },
+      "size": [1, 1],
+      "effects": {
+        "popularity_penalty": -2,
+        "production_bonus": 0.10,
+        "health_penalty": -0.05
+      },
+      "icon": "res://assets/buildings/gallows.png",
+      "description": "Fear-inducing structure that increases worker production by 10% but reduces popularity by 2 and villager health by 5%. Part of the Fear Factor system."
+    },
+    "dungeon": {
+      "id": "dungeon",
+      "name": "Dungeon",
+      "category": "fear",
+      "fear_level": 1,
+      "cost": {
+        "wood": 20,
+        "stone": 25
+      },
+      "size": [2, 2],
+      "effects": {
+        "popularity_penalty": -2,
+        "production_bonus": 0.10,
+        "health_penalty": -0.05
+      },
+      "icon": "res://assets/buildings/dungeon.png",
+      "description": "Dark prison that increases worker production by 10% but reduces popularity by 2 and villager health by 5%. Part of the Fear Factor system."
+    },
+    "garden": {
+      "id": "garden",
+      "name": "Garden",
+      "category": "entertainment",
+      "good_level": 1,
+      "cost": {
+        "wood": 10,
+        "stone": 5
+      },
+      "size": [1, 1],
+      "effects": {
+        "popularity_bonus": 5,
+        "production_penalty": -0.05,
+        "health_bonus": 0.05
+      },
+      "icon": "res://assets/buildings/garden.png",
+      "description": "Beautiful garden that increases popularity by 5 and villager health by 5%, but reduces worker production by 5%. Part of the Good Things system."
+    },
+    "church": {
+      "id": "church",
+      "name": "Church",
+      "category": "entertainment",
+      "good_level": 2,
+      "cost": {
+        "wood": 40,
+        "stone": 50
+      },
+      "size": [2, 2],
+      "effects": {
+        "popularity_bonus": 10,
+        "production_penalty": -0.10,
+        "health_bonus": 0.10
+      },
+      "icon": "res://assets/buildings/church.png",
+      "description": "Sacred place that significantly increases popularity by 10 and villager health by 10%, but reduces worker production by 10%. Part of the Good Things system."
+    }
+  }
+}

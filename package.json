@@ -1,0 +1,21 @@
+{
+  "name": "downtown-asset-generator",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Asset generator for Downtown city management game",
+  "scripts": {
+    "generate:buildings": "node tools/generate-buildings.js",
+    "generate:all": "node tools/generate-buildings.js",
+    "validate": "node tools/validate-gdscript.js",
+    "validate:verbose": "node tools/validate-gdscript.js --verbose",
+    "precommit": "node tools/validate-gdscript.js",
+    "install:hooks": "node tools/install-git-hooks.js",
+    "test:pipeline": "node tools/validate-pipeline.js",
+    "test": "node tools/validate-pipeline.js",
+    "test:comprehensive": "echo 'Run ComprehensiveTestSuite.tscn in Godot editor or use: godot --headless --script res://tests/TestRunner.gd'",
+    "test:all": "echo 'Run all test suites in Godot editor'"
+  },
+  "dependencies": {
+    "pngjs": "^7.0.0"
+  }
+}
