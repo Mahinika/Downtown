@@ -340,11 +340,12 @@ func get_completed_goals() -> Array:
 func get_unlocked_buildings() -> Array:
 	"""Get list of unlocked buildings"""
 	return unlocked_buildings.duplicate()
+
 func is_building_favorite(building_id: String) -> bool:
-        return building_id in favorite_buildings
+	return building_id in favorite_buildings
 
 func toggle_favorite_building(building_id: String) -> void:
-        if building_id in favorite_buildings:
-                favorite_buildings.erase(building_id)
-        else:
-                favorite_buildings.append(building_id)
+	if building_id in favorite_buildings:
+		favorite_buildings.erase(building_id)
+	else:
+		favorite_buildings.append(building_id)

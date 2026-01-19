@@ -21,11 +21,13 @@ func _ready():
 func _demo_error_dump():
 	# Simulate an error condition
 	var test_error = "Test error: Villager stuck in invalid state"
-	DebugBridge.dump_error(test_error, {
-		"test_data": "This is test context",
-		"timestamp": Time.get_time_string_from_system(),
-		"demo": true
-	})
+	var debug_bridge = GameServices.get_debug_bridge()
+	if debug_bridge:
+		debug_bridge.dump_error(test_error, {
+			"test_data": "This is test context",
+			"timestamp": Time.get_time_string_from_system(),
+			"demo": true
+		})
 	print("[DebugBridgeDemo] Error dump created - check debug_state.json")
 
 func _demo_performance_dump(delay: float):

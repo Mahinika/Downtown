@@ -315,7 +315,7 @@ func show_toast(message: String, type: String = "info", duration: float = 3.0) -
 
 func show_villager_needs_warnings() -> void:
 	"""Check and show warnings about villager needs"""
-	var game_world = GameServicesClass.get_world()
+	var game_world = GameServices.get_world()
 	if not game_world:
 		push_warning("[UIManager] GameWorld not available")
 		return
@@ -363,7 +363,7 @@ func generate_resource_tooltip(resource_id: String, current_amount: int, max_amo
 			lines.append("⚠️ Empty!")
 
 	# Production/Consumption rates
-	var economy = GameServicesClass.get_economy()
+	var economy = GameServices.get_economy()
 	if economy and economy.has_method("get_resource_rate"):
 		var rate = economy.get_resource_rate(resource_id)
 		if rate != 0.0:
@@ -458,8 +458,8 @@ func _on_tutorial_dismissed(tutorial_id: String, panel: Panel) -> void:
 
 func check_tutorial_triggers() -> void:
 	"""Check for tutorial triggers based on game state"""
-	var game_world = GameServicesClass.get_world()
-	var economy = GameServicesClass.get_economy()
+	var game_world = GameServices.get_world()
+	var economy = GameServices.get_economy()
 
 	if not game_world or not economy:
 		push_warning("[UIManager] GameWorld or Economy not available for tutorial checks")
@@ -554,7 +554,7 @@ func update_minimap(minimap: Control) -> void:
 	for child in map_view.get_children():
 		child.queue_free()
 
-	var game_world = GameServicesClass.get_world()
+	var game_world = GameServices.get_world()
 	if not game_world:
 		push_warning("[UIManager] GameWorld not available for minimap update")
 		return

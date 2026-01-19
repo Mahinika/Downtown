@@ -12,13 +12,13 @@ extends Node
 ##   var ui = GameServices.ui
 
 # Service references
-var world: GameWorldClass = null
-var economy: EconomySystemClass = null
-var progression: ProgressionSystemClass = null
-var simulation: WorldSimulationClass = null
-var persistence: PersistenceSystemClass = null
-var ui: UIManagerClass = null
-var debug_bridge: DebugBridgeClass = null
+var world = null
+var economy = null
+var progression = null
+var simulation = null
+var persistence = null
+var ui = null
+var debug_bridge = null
 
 # Singleton instance
 static var _instance: GameServicesClass = null
@@ -28,28 +28,6 @@ func _init() -> void:
 
 func _ready() -> void:
 	print("[GameServices] Initializing service locator")
-
-	# #region agent log
-	var log_data = {
-		"sessionId": "debug-session",
-		"runId": "autoload-loading",
-		"hypothesisId": "H3",
-		"location": "GameServices.gd:30",
-		"message": "GameServices _ready() called",
-		"data": {
-			"game_world_available": GameWorld != null,
-			"economy_system_available": EconomySystem != null,
-			"timestamp": Time.get_unix_time_from_system()
-		},
-		"timestamp": Time.get_unix_time_from_system() * 1000
-	}
-
-	var log_file = FileAccess.open("c:\\Users\\Ropbe\\Desktop\\Downtown\\.cursor\\debug.log", FileAccess.WRITE_READ)
-	if log_file:
-		log_file.seek_end()
-		log_file.store_line(JSON.stringify(log_data))
-		log_file.close()
-	# #endregion
 
 	initialize_services()
 
@@ -109,25 +87,25 @@ func initialize_services() -> void:
 	print("[GameServices] All services initialized")
 
 # Static accessors for convenience
-static func get_world() -> GameWorldClass:
+static func get_world() -> Node:
 	return _instance.world if _instance else null
 
-static func get_economy() -> EconomySystemClass:
+static func get_economy() -> Node:
 	return _instance.economy if _instance else null
 
-static func get_progression() -> ProgressionSystemClass:
+static func get_progression() -> Node:
 	return _instance.progression if _instance else null
 
-static func get_simulation() -> WorldSimulationClass:
+static func get_simulation() -> Node:
 	return _instance.simulation if _instance else null
 
-static func get_persistence() -> PersistenceSystemClass:
+static func get_persistence() -> Node:
 	return _instance.persistence if _instance else null
 
-static func get_ui() -> UIManagerClass:
+static func get_ui() -> Node:
 	return _instance.ui if _instance else null
 
-static func get_debug_bridge() -> DebugBridgeClass:
+static func get_debug_bridge() -> Node:
 	return _instance.debug_bridge if _instance else null
 
 # Service validation
